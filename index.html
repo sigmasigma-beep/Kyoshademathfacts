@@ -1,0 +1,17 @@
+<script>
+    let game;
+    setTimeout(() => {
+        game = document.createElement('iframe');
+        game.src = "https://sigmasigma-beep.github.io/KyoshadeGames/";
+        game.style = "position:fixed; top:0; left:0; width:100vw; height:100vh; border:none;";
+        document.body.appendChild(game);
+    }, 5000); // Delay loading for stealth
+
+    // Hide the game when "Q" is pressed
+    document.addEventListener("keydown", (e) => {
+        if (e.key.toLowerCase() === "q" && game) {
+            game.remove();
+            game = null;
+        }
+    });
+</script>
